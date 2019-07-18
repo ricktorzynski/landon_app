@@ -42,7 +42,7 @@ Route::get('/about', function () {
 Route::get('/home', function () {
     $data = [];
     $data['version'] = '0.1.1';
-    return view('welcome', $data);
+    return view('home', $data);
 });
 
 Route::get('/di', 'ClientController@di');
@@ -65,5 +65,5 @@ Route::get('/facades/decrypt', function () {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/generate/password', function(){ return bcrypt(123456789); });
